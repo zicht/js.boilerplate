@@ -13,7 +13,8 @@ module.exports = function (config) {
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: [
-            'jasmine'
+            'jasmine',
+            'karma-typescript'
         ],
 
 
@@ -23,54 +24,31 @@ module.exports = function (config) {
 
         files: [
             {
+                pattern: 'src/**/*.ts'
+            },
+            {
                 pattern: 'test/unit/**/*.spec.ts',
                 watched: false
             }
         ],
 
+
         preprocessors: {
-            'test/unit/**/*.spec.ts': ['webpack', 'sourcemap'],
-            'src/**/*.ts': ['coverage']
-        },
-
-        webpack: {
-            module: webpackConfig.module,
-            resolve: webpackConfig.resolve
-        },
-
-        webpackMiddleware: {
-            // webpack-dev-middleware configuration
-            // i. e.
-            stats: 'errors-only'
+            '**/*.ts': ['karma-typescript']
         },
 
 
         plugins: [
-            'karma-coverage',
-            'karma-sourcemap-loader',
-            'karma-remap-coverage',
             'karma-jasmine',
             'karma-phantomjs-launcher',
-            'karma-webpack'
+            'karma-typescript'
         ],
 
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage', 'remap-coverage', 'dots'],
-
-
-        coverageReporter: {
-            type: 'in-memory'
-        },
-
-
-        remapCoverageReporter: {
-            'text-summary': null,
-            html: './coverage/html',
-            cobertura: './coverage/cobertura.xml'
-        },
+        reporters: ['progress', 'karma-typescript'],
 
 
         // web server port
