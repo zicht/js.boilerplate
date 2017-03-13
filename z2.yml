@@ -14,11 +14,11 @@ tasks:
 
     ts.update:
         help: Compile TypeScript
-        do: ./node_modules/.bin/webpack
+        do: ./node_modules/.bin/tsc
 
     ts.watch:
         help: Compile TypeScript
-        do: ./node_modules/.bin/webpack --watch
+        do: ./node_modules/.bin/tsc --watch
 
     ts.test:
         help: Apply tests on TypeScript files
@@ -26,4 +26,4 @@ tasks:
 
     ts.lint:
         help: Lint TypeScript files
-        do: ./node_modules/.bin/tslint --config $(PWD)/node_modules/tslint-rules/tslint.json --project $(PWD)/tsconfig.json
+        do: ./node_modules/.bin/tslint --config ./node_modules/zicht-tslint/tslint.json --project ./tsconfig.json
