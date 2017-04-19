@@ -5,13 +5,6 @@ tasks:
         help: Install npm packages
         do: npm install
 
-    install.structure:
-        help: Create directory structure for new projects
-        do: |
-            mkdir -p dist
-            mkdir -p src
-            mkdir -p test/unit
-
     ts.update:
         help: Compile TypeScript
         do: ./node_modules/.bin/tsc
