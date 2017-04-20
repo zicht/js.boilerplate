@@ -6,15 +6,15 @@ Cookiecutter template for TypeScript projects
 
 Install Cookiecutter
 
-    .. code-block:: sh
-
-        pip3 install --upgrade cookiecutter
+```
+pip3 install --upgrade cookiecutter
+```
 
 Generate a boilerplate
 
-    .. code-block:: sh
-
-        cookiecutter https://github.com/zicht/js.boilerplate.git
+```
+cookiecutter https://github.com/zicht/js.boilerplate.git
+```
 
 Then create a new repo and add your TypeScript specific code.
 
