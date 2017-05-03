@@ -2,23 +2,40 @@
 
 {{cookiecutter.package_description}}
 
-This is a TypeScript library that can be installed with `npm`.
-The source files are placed in the `src` directory. The compiled source files are 
-available in the `dist` folder. The files are compiled to `es6` using `commonjs` module loader. Source maps and 
-declaration files are also available in the `dist` folder.
+## Install
 
-There is a [z](https://github.com/zicht/z-installer) configuration file included to perform common tasks to 
-lint/compile/test the code. 
+```
+npm install {{cookiecutter.package_github_url}}.git --save
+```
 
-The TypeScript code is tested with tests written in [Jasmine](https://jasmine.github.io/) and can be run with 
-[Karma](https://karma-runner.github.io/). Run `z ts:test` to execute the tests.
-The tests will output code coverage in the `coverage` folder.
+## Dev
 
-For TypeScript code a `tslint` configuration is added. Run `z ts:lint` to execute the linter.
+- Built in [TypeScript](http://www.typescriptlang.org/).
+- Tests in [Jasmine](https://jasmine.github.io/), run with [Karma](https://karma-runner.github.io/).
+- Source files in [`src/`](src/).
+- Compiled to ES6 using the CommonJS module loader, in [`dist/`](dist/).
+- Source maps and declaration files are available in [`dist/`](dist/).
 
-When creating a new version use the command `npm version <version> -m'<message>` to make sure the package.json has the 
-same version as the repository.
+### Tests
 
-# Maintainer
+Run unit tests:
 
-- {{cookiecutter.author_name}} <{{cookiecutter.author_email}}>
+```
+npm run test
+```
+
+Run linting:
+
+```
+npm run lint
+```
+
+Run TypeScript compile:
+
+```
+npm run compile
+```
+
+## Maintainer
+
+{{cookiecutter.author_name}} ([@{{cookiecutter.author_github_name}}](https://github.com/{{cookiecutter.author_github_name}})
