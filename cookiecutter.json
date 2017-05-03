@@ -1,0 +1,11 @@
+{
+  "author_name": "Joppe Aarts",
+  "author_email": "joppe@zicht.nl",
+  "author_github_name": "zicht",
+  "app_name": "Project name",
+  "package_name": "{{cookiecutter.app_name|lower|replace(' ', '_')}}",
+  "package_description": "A TypeScript library",
+  "package_github_url": "http://github.com/{{cookiecutter.author_github_name}}/{{cookiecutter.package_name}}",
+  "package_clone_url": "git@github.com:{{cookiecutter.author_github_name}}/{{cookiecutter.package_name}}.git",
+  "package_version": "1.0.0"
+}

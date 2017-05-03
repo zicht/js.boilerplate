@@ -1,13 +1,23 @@
-# Boilerplate
+# Cookiecutter boilerplate
 
-Use this project as a boilerplate for projects that use TypeScript.
-For testing use Karma and Jasmine.
-For compiling TypeScript to JavaScript use Webpack.
+Cookiecutter template for TypeScript projects
 
-Start a project by doing:
+## Quick start
 
-- `mkdir <project_name>`
-- `cd <project_name>`
-- `git clone git@github.com/zicht/boilerplate.git .`
-- `rm -rf .git`
-- ... do the steps to create a new project described as on github.com
+Install Cookiecutter
+
+```
+pip3 install --upgrade cookiecutter
+```
+
+Generate a boilerplate
+
+```
+cookiecutter https://github.com/zicht/js.boilerplate.git
+```
+
+Then create a new repo and add your TypeScript specific code.
+
+# Maintainer
+
+- Joppe Aarts <joppe@zicht.nl>
