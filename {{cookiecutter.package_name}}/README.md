@@ -38,4 +38,4 @@ npm run compile
 
 ## Maintainer
 
-{{cookiecutter.author_name}} ([@{{cookiecutter.author_github_name}}](https://github.com/{{cookiecutter.author_github_name}})
+{{cookiecutter.author_name}} ([@{{cookiecutter.author_github_name}}](https://github.com/{{cookiecutter.author_github_name}}))
