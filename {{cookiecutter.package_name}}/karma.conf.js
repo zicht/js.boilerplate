@@ -38,7 +38,10 @@ module.exports = function (config) {
             },
             compilerOptions: {
                 target: 'es6'
-            }
+            },
+            exclude: [
+                'demo'
+            ]
         },
 
         port: 9876,
