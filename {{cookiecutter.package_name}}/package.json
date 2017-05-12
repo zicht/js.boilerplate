@@ -4,7 +4,7 @@
   "description": "{{cookiecutter.package_description}}",
   "scripts": {
     "test": "karma start karma.conf.js",
-    "lint": "karma tslint --config node_modules/zicht-tslint/tslint.json --project tsconfig.json",
+    "lint": "tslint --config node_modules/zicht-tslint/tslint.json --project tsconfig.json",
     "compile": "tsc"
   },
   "repository": {
