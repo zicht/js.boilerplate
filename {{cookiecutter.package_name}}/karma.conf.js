@@ -36,12 +36,12 @@ module.exports = function (config) {
                     filename: 'coverage'
                 }
             },
-            compilerOptions: {
-                target: 'es6'
-            },
-            exclude: [
-                'demo'
-            ]
+            exclude: ['demo'],
+            include: [
+                'src/**/*',
+                'test/**/*'
+            ],
+            tsconfig: './tsconfig.json'
         },
 
         port: 9876,
