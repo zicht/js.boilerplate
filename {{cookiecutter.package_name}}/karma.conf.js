@@ -24,6 +24,17 @@ module.exports = function (config) {
         ],
 
         karmaTypescriptConfig: {
+            coverageOptions: {
+                exclude: [
+                    /\.(d|spec|test)\.ts$/i,
+                    /node_modules/i
+                ]
+            },
+            exclude: ['demo'],
+            include: [
+                'src/**/*',
+                'test/**/*'
+            ],
             reports: {
                 clover: {
                     directory: 'coverage',
@@ -36,12 +47,8 @@ module.exports = function (config) {
                     filename: 'coverage'
                 }
             },
-            exclude: ['demo'],
-            include: [
-                'src/**/*',
-                'test/**/*'
-            ],
             tsconfig: './tsconfig.json'
+
         },
 
         port: 9876,
