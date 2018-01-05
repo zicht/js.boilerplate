@@ -1,4 +1,4 @@
-# `@{{cookiecutter.app_owner}}/{{@cookiecutter.app_name}}`
+# `@{{cookiecutter.app_owner}}/{{cookiecutter.app_name}}`
 
 {{cookiecutter.package_description}}
 
