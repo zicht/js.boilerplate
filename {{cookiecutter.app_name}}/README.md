@@ -1,10 +1,10 @@
-# `{{cookiecutter.app_name}}`
+# `@{{cookiecutter.app_owner}}/{{@cookiecutter.app_name}}`
 
 {{cookiecutter.package_description}}
 
 ## Installation
 
-Update your project's `package.json`, this will download the `{{cookiecutter.app_name}}` plugin
+Update your project's `package.json`, this will download the `@{{cookiecutter.app_owner}}/{{cookiecutter.app_name}}` plugin
 to your `node_modules` directory.
 
 ```
