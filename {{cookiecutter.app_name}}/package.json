@@ -1,5 +1,5 @@
 {
-  "name": "{{cookiecutter.package_name}}",
+  "name": "@{{cookiecutter.app_owner}}/{{cookiecutter.app_name}}",
   "version": "{{cookiecutter.package_version}}",
   "description": "{{cookiecutter.package_description}}",
   "scripts": {
