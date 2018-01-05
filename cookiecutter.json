@@ -2,7 +2,7 @@
     "author_name": "Boudewijn Schoon",
     "author_email": "boudewijn@zicht.nl",
     "author_github_name": "zicht",
-    "app_name": "js.project-name",
+    "app_name": "@zicht/js.project-name",
     "package_description": "A TypeScript library",
     "package_github_url": "git+ssh://git@github.com/{{cookiecutter.author_github_name}}/{{cookiecutter.app_name}}",
     "package_version": "1.0.0"
