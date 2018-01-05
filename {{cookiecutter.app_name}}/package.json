@@ -4,7 +4,7 @@
   "description": "{{cookiecutter.package_description}}",
   "scripts": {
     "test": "karma start karma.conf.js",
-    "tslint": "tslint --config node_modules/zicht-tslint/tslint.json --project tsconfig.json",
+    "tslint": "tslint --config node_modules/@zicht/tslint/tslint.json --project tsconfig.json",
     "build": "tsc",
     "watch": "tsc --watch"
   },
@@ -29,6 +29,7 @@
   ],
   "devDependencies": {
     "@types/jasmine": "^2.8.3",
+    "@zicht/tslint": "git+ssh://git@github.com/zicht/tslint.git",
     "jasmine-core": "^2.5.2",
     "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.0.0",
@@ -36,7 +37,6 @@
     "karma-typescript": "^3.0.9",
     "tslib": "^1.8.1",
     "tslint": "^4.4.2",
-    "tslint-rules": "git+ssh://github.com/zicht/tslint.git",
     "typescript": "^2.6.2"
   }
 }
