@@ -1,9 +1,8 @@
-/*global module*/
+/* global module */
 
 module.exports = function (config) {
     const configuration = {
         frameworks: ['jasmine', 'karma-typescript'],
-
         files: [
             {
                 pattern: 'src/**/*.ts'
@@ -12,17 +11,14 @@ module.exports = function (config) {
                 pattern: 'test/**/*.ts'
             }
         ],
-
         preprocessors: {
             'src/**/*.ts': ['karma-typescript'],
             'test/**/*.ts': ['karma-typescript']
         },
-
         reporters: [
             'progress',
             'karma-typescript'
         ],
-
         karmaTypescriptConfig: {
             coverageOptions: {
                 exclude: [
@@ -30,7 +26,9 @@ module.exports = function (config) {
                     /node_modules/i
                 ]
             },
-            exclude: ['demo'],
+            exclude: [
+                'demo'
+            ],
             include: [
                 'src/**/*',
                 'test/**/*'
@@ -41,31 +39,31 @@ module.exports = function (config) {
                     subdirectory: 'clover',
                     filename: 'coverage.xml'
                 },
-                'html': {
+                html: {
                     directory: 'coverage',
                     subdirectory: 'html',
                     filename: 'coverage'
                 }
             },
-            tsconfig: './tsconfig.json'
-
+            compilerOptions: {
+                target: 'es6',
+                lib: [
+                    "dom",
+                    "es7"
+                ]
+            }
         },
-
         port: 9876,
-
         colors: true,
-
         logLevel: config.LOG_WARN,
-
         autoWatch: false,
-
+        singleRun: true,
         browsers: [
-            'ChromeNoSandboxHeadless'
+            'ChromiumNoSandboxHeadless'
         ],
-
         customLaunchers: {
-            ChromeNoSandboxHeadless: {
-                base: 'Chrome',
+            ChromiumNoSandboxHeadless: {
+                base: 'Chromium',
                 flags: [
                     '--no-sandbox',
                     '--headless',
@@ -73,9 +71,7 @@ module.exports = function (config) {
                     ' --remote-debugging-port=9222'
                 ]
             }
-        },
-
-        singleRun: true
+        }
     };
 
     config.set(configuration);
