@@ -16,7 +16,7 @@ npm install '{{cookiecutter.package_github_url}}.git#release/1.x' --save
 - Built in [TypeScript](http://www.typescriptlang.org/). `npm run build` and `npm run watch`.
 - Tests in [Jasmine](https://jasmine.github.io/), run with [Karma](https://karma-runner.github.io/). `npm run tslint` and `npm run test`.
 - Source files in [`src/`](src/).
-- Compiled to ES6 using the CommonJS module loader, in [`dist/`](dist/).
+- Compiled to ES5 using the CommonJS module loader, in [`dist/`](dist/).
 - Source maps and declaration files are available in [`dist/`](dist/).
 
 
