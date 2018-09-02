@@ -46,11 +46,26 @@ module.exports = function (config) {
                 }
             },
             compilerOptions: {
-                target: 'es6',
-                lib: [
-                    "dom",
-                    "es7"
-                ]
+                "baseUrl": "./",
+                "declaration": true,
+                "lib": ["dom", "dom.iterable", "es2017"],
+                "module": "commonjs",
+                "moduleResolution": "node",
+                "noImplicitReturns": true,
+                "noUnusedLocals": true,
+                "noUnusedParameters": true,
+                "outDir": "dist",
+                "removeComments": true,
+                "sourceMap": true,
+                "strict": true,
+                "target": "es5",
+
+                // Support transpiling generators and Iterators in ES5
+                // See: https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#new---downleveliteration
+                "downlevelIteration": true,
+                // Import emit helpers from tslib instead of defining them multiple times in the compiled code.
+                // See: https://blog.mariusschulz.com/2016/12/16/typescript-2-1-external-helpers-library
+                "importHelpers": true
             }
         },
         port: 9876,
@@ -68,7 +83,7 @@ module.exports = function (config) {
                     '--no-sandbox',
                     '--headless',
                     '--disable-gpu',
-                    ' --remote-debugging-port=9222'
+                    '--remote-debugging-port=9222'
                 ]
             }
         }
