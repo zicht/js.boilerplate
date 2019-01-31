@@ -7,3 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added|Changed|Deprecated|Removed|Fixed|Security
 Nothing so far
+
+## 1.0.0 - 1900-01-01
+### Added
+- Initial commit

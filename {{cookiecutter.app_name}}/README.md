@@ -8,17 +8,19 @@ Update your project's `package.json`, this will download the `@{{cookiecutter.ap
 to your `node_modules` directory.
 
 ```
-npm install '{{cookiecutter.package_github_url}}.git#release/1.x' --save
+npm install {{cookiecutter.app_owner}}/{{cookiecutter.app_name}}
 ```
 
-## Development
+## Scripts
 
-- Built in [TypeScript](http://www.typescriptlang.org/). `npm run build` and `npm run watch`.
-- Tests in [Jasmine](https://jasmine.github.io/), run with [Karma](https://karma-runner.github.io/). `npm run tslint` and `npm run test`.
-- Source files in [`src/`](src/).
-- Compiled to ES5 using the CommonJS module loader, in [`dist/`](dist/).
-- Source maps and declaration files are available in [`dist/`](dist/).
+- Unit test: `npm run test`
+- Lint test: `npm run tslint`
+- Build documentation: `npm run docs`
+- Publish a release to [npmjs.com](http://www.npmjs.com): `npm publish`
 
+## Generated documentation
+
+[Documentation](docs/README.md)
 
 ## Maintainer
 
