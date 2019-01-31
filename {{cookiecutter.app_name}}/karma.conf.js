@@ -1,5 +1,3 @@
-/* global module */
-
 module.exports = function (config) {
     const configuration = {
         frameworks: ['jasmine', 'karma-typescript'],
@@ -22,16 +20,25 @@ module.exports = function (config) {
         karmaTypescriptConfig: {
             coverageOptions: {
                 exclude: [
-                    /\.(d|spec|test)\.ts$/i,
+                    /test/i,
                     /node_modules/i
-                ]
+                ],
+                threshold: {
+                    global: {
+                        statements: 100,
+                        branches: 100,
+                        functions: 100,
+                        lines: 100
+                    }
+                }
             },
-            exclude: [
-                'demo'
-            ],
+            exclude: {
+                mode: 'replace',
+                values: []
+            },
             include: [
-                'src/**/*',
-                'test/**/*'
+                'src/**/*.ts',
+                'test/**/*.ts'
             ],
             reports: {
                 clover: {
@@ -45,28 +52,7 @@ module.exports = function (config) {
                     filename: 'coverage'
                 }
             },
-            compilerOptions: {
-                "baseUrl": "./",
-                "declaration": true,
-                "lib": ["dom", "dom.iterable", "es2017"],
-                "module": "commonjs",
-                "moduleResolution": "node",
-                "noImplicitReturns": true,
-                "noUnusedLocals": true,
-                "noUnusedParameters": true,
-                "outDir": "dist",
-                "removeComments": true,
-                "sourceMap": true,
-                "strict": true,
-                "target": "es5",
-
-                // Support transpiling generators and Iterators in ES5
-                // See: https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#new---downleveliteration
-                "downlevelIteration": true,
-                // Import emit helpers from tslib instead of defining them multiple times in the compiled code.
-                // See: https://blog.mariusschulz.com/2016/12/16/typescript-2-1-external-helpers-library
-                "importHelpers": true
-            }
+            tsconfig: './tsconfig.json'
         },
         port: 9876,
         colors: true,

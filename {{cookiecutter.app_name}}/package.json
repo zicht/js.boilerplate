@@ -1,41 +1,46 @@
 {
-  "name": "@{{cookiecutter.app_owner}}/{{cookiecutter.app_name}}",
-  "version": "{{cookiecutter.package_version}}",
-  "description": "{{cookiecutter.package_description}}",
-  "scripts": {
-    "test": "karma start karma.conf.js",
-    "tslint": "tslint --config node_modules/@zicht/tslint/tslint.json --project tsconfig.json",
-    "build": "tsc",
-    "watch": "tsc --watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "{{cookiecutter.package_github_url}}"
-  },
-  "author": {
-    "name": "{{cookiecutter.author_name}}",
-    "email": "{{cookiecutter.author_email}}"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "{{cookiecutter.package_github_url}}/issues"
-  },
-  "homepage": "{{cookiecutter.package_github_url}}",
-  "keywords": [
-    "Karma",
-    "TypeScript",
-    "JavaScript",
-    "Jasmine"
-  ],
-  "devDependencies": {
-    "@types/jasmine": "^2.8.8",
-    "@zicht/tslint": "git+ssh://git@github.com/zicht/tslint.git#semver:^5.0",
-    "jasmine-core": "^3.1.0",
-    "karma": "^2.0.5",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.1.2",
-    "karma-typescript": "^3.0.13",
-    "tslint": "^5.11.0",
-    "typescript": "^3.0.1"
-  }
+    "name": "@{{cookiecutter.app_owner}}/{{cookiecutter.app_name}}",
+    "version": "{{cookiecutter.package_version}}",
+    "description": "{{cookiecutter.package_description}}",
+    "scripts": {
+        "build": "tsc",
+        "docs": "typedoc src --mode file --readme none --theme markdown --out docs --excludeExternals --excludeNotExported --excludePrivate --excludeProtected",
+        "lint": "tslint --config node_modules/@zicht/tslint/tslint.json --project tsconfig.json",
+        "test": "karma start karma.conf.js",
+        "watch": "tsc --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "{{cookiecutter.package_github_url}}"
+    },
+    "author": {
+        "name": "{{cookiecutter.author_name}}",
+        "email": "{{cookiecutter.author_email}}"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "{{cookiecutter.package_github_url}}/issues"
+    },
+    "homepage": "{{cookiecutter.package_github_url}}",
+    "keywords": [
+        "Karma",
+        "TypeScript",
+        "JavaScript",
+        "Jasmine"
+    ],
+    "devDependencies": {
+        "@types/jasmine": "^3.3.8",
+        "@zicht/tslint": "^5.0.4",
+        "jasmine-core": "^3.3.0",
+        "karma": "^4.0.0",
+        "karma-chrome-launcher": "^2.0.0",
+        "karma-jasmine": "^2.0.1",
+        "karma-typescript": "^3.0.13",
+        "tslint": "^5.12.1",
+        "typedoc": "^0.14.2",
+        "typedoc-plugin-markdown": "^1.1.25"
+    },
+    "dependencies": {
+        "typescript": "^3.2.4"
+    }
 }
