@@ -1,21 +1,23 @@
+const {browserStackCustomLaunchers} = require('@zicht/js.util/test/karma/browser-stack');
+
 module.exports = function (config) {
-    const configuration = {
-        frameworks: ['jasmine', 'karma-typescript'],
+    config.set({
+        frameworks: ['jasmine', 'karma-typescript', 'polyfill'],
+        polyfill: [],
         files: [
-            {
-                pattern: 'src/**/*.ts'
-            },
-            {
-                pattern: 'test/**/*.ts'
-            }
+            {pattern: 'src/**/*.ts'},
+            {pattern: 'test/**/*.ts'},
+            {pattern: 'node_modules/@zicht/*/src/**/*.ts'}
         ],
         preprocessors: {
             'src/**/*.ts': ['karma-typescript'],
-            'test/**/*.ts': ['karma-typescript']
+            'test/**/*.ts': ['karma-typescript'],
+            'node_modules/@zicht/*/src/**/*.ts': ['karma-typescript']
         },
         reporters: [
             'progress',
-            'karma-typescript'
+            'karma-typescript',
+            'Browserstack'
         ],
         karmaTypescriptConfig: {
             coverageOptions: {
@@ -38,7 +40,8 @@ module.exports = function (config) {
             },
             include: [
                 'src/**/*.ts',
-                'test/**/*.ts'
+                'test/**/*.ts',
+                'node_modules/@zicht/*/src/**/*.ts'
             ],
             reports: {
                 clover: {
@@ -59,11 +62,20 @@ module.exports = function (config) {
         logLevel: config.LOG_WARN,
         autoWatch: false,
         singleRun: true,
+        browserStack: {
+            // Note that you need to set the BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY environment variables
+            // https://www.browserstack.com/accounts/settings
+            // https://automate.browserstack.com
+            build: 'Karma test',
+            project: '@{{cookiecutter.app_owner}}/{{cookiecutter.app_name}}',
+            video: false
+        },
         browsers: [
-            'ChromiumNoSandboxHeadless'
+            'LocalChromium',
+            ...(config.enableBrowserStack ? Object.keys(browserStackCustomLaunchers) : [])
         ],
         customLaunchers: {
-            ChromiumNoSandboxHeadless: {
+            LocalChromium: {
                 base: 'Chromium',
                 flags: [
                     '--no-sandbox',
@@ -71,9 +83,8 @@ module.exports = function (config) {
                     '--disable-gpu',
                     '--remote-debugging-port=9222'
                 ]
-            }
+            },
+            ...browserStackCustomLaunchers,
         }
-    };
-
-    config.set(configuration);
+    });
 };

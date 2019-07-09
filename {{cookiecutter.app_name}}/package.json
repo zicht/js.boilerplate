@@ -6,6 +6,7 @@
         "build": "tsc",
         "lint": "tslint --config node_modules/@zicht/tslint/tslint.json --project tsconfig.json",
         "test": "karma start karma.conf.js",
+        "test:bs": "karma start karma.conf.js --enable-browser-stack",
         "watch": "tsc --watch"
     },
     "repository": {
@@ -29,11 +30,14 @@
     ],
     "devDependencies": {
         "@types/jasmine": "^3.3.8",
+        "@zicht/js.util": "^2.4.2",
         "@zicht/tslint": "^5.0.4",
         "jasmine-core": "^3.3.0",
         "karma": "^4.0.0",
+        "karma-browserstack-launcher": "^1.5.1",
         "karma-chrome-launcher": "^2.0.0",
         "karma-jasmine": "^2.0.1",
+        "karma-polyfill": "^1.0.0",
         "karma-typescript": "^4.1.1",
         "tslint": "^5.12.1",
     },
