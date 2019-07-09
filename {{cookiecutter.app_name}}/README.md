@@ -15,7 +15,6 @@ npm install {{cookiecutter.app_owner}}/{{cookiecutter.app_name}}
 
 - Unit test: `npm run test`
 - Lint test: `npm run tslint`
-- Build documentation: `npm run docs`
 - Publish a release to [npmjs.com](http://www.npmjs.com): `npm publish`
 
 ## Generated documentation

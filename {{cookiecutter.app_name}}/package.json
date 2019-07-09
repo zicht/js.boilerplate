@@ -4,7 +4,6 @@
     "description": "{{cookiecutter.package_description}}",
     "scripts": {
         "build": "tsc",
-        "docs": "typedoc src --mode file --readme none --theme markdown --out docs --excludeExternals --excludeNotExported --excludePrivate --excludeProtected",
         "lint": "tslint --config node_modules/@zicht/tslint/tslint.json --project tsconfig.json",
         "test": "karma start karma.conf.js",
         "watch": "tsc --watch"
@@ -35,12 +34,10 @@
         "karma": "^4.0.0",
         "karma-chrome-launcher": "^2.0.0",
         "karma-jasmine": "^2.0.1",
-        "karma-typescript": "^3.0.13",
+        "karma-typescript": "^4.1.1",
         "tslint": "^5.12.1",
-        "typedoc": "^0.14.2",
-        "typedoc-plugin-markdown": "^1.1.25"
     },
     "dependencies": {
-        "typescript": "^3.2.4"
+        "typescript": "^3.5.2"
     }
 }
