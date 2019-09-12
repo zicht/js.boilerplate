@@ -17,10 +17,6 @@ npm install {{cookiecutter.app_owner}}/{{cookiecutter.app_name}}
 - Lint test: `npm run tslint`
 - Publish a release to [npmjs.com](http://www.npmjs.com): `npm publish`
 
-## Generated documentation
-
-[Documentation](docs/README.md)
-
 ## Maintainer
 
 - {{cookiecutter.author_name}} <{{cookiecutter.author_email}}>
