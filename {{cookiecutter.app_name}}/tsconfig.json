@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": "./",
         "declaration": true,
-        "lib": ["dom", "dom.iterable", "es2017"],
+        "lib": ["dom", "dom.iterable", "es2019", "es2019.object"],
         "module": "commonjs",
         "moduleResolution": "node",
         "noImplicitReturns": true,
