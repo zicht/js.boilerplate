@@ -5,6 +5,7 @@
     "scripts": {
         "build": "tsc",
         "lint": "tslint --config node_modules/@zicht/tslint/tslint.json --project tsconfig.json",
+        "prepublishOnly": "npm run lint && npm run test",
         "test": "karma start karma.conf.js",
         "test:bs": "karma start karma.conf.js --enable-browser-stack",
         "watch": "tsc --watch"
